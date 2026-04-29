@@ -1,0 +1,42 @@
+Sarah: Good morning everyone. Let's get started with the Q2 planning meeting.
+Mike: Morning Sarah. I've got the preliminary numbers ready.
+Sarah: Great. So first, let's talk about the product roadmap. Where are we on the mobile app launch?
+Mike: We're making progress. The iOS version is about 70% done, and Android is maybe around 50%.
+Sarah: What's the timeline looking like?
+Mike: We should probably be able to launch by end of June. Maybe early July.
+Lisa: Actually, I thought we agreed last week that the launch would be in May? I have it in my notes.
+Mike: Well, that was the initial target, but things have shifted. We'll see how it goes.
+Sarah: OK, so we need clarity on this. Mike, can you confirm the launch date by Friday?
+Mike: I'll try to get back to you on that. At some point this week hopefully.
+Sarah: Let's make it definitive. Lisa, what about the marketing campaign?
+Lisa: We've been working on the social media strategy. It's coming along.
+Sarah: Can you be more specific? What's the budget and timeline?
+Lisa: The budget is $15,000 for social ads. We're planning to start the campaign two weeks before launch.
+Sarah: That sounds good. Who's handling the email marketing piece?
+Lisa: Someone should probably take that on. We need to look into it.
+Sarah: That's not clear enough. Let me assign that. David, can you own the email marketing campaign?
+David: Sure, I can handle that. I'll have a draft ready by next Wednesday.
+Sarah: Perfect. Now, about the customer feedback from last quarter. David, what were the main themes?
+David: The biggest complaint was about loading times. Users said the app was slow.
+Mike: That's interesting because we actually optimized the backend last month. Performance should be 40% faster now.
+David: Well, the feedback I got last week still mentions slowness. So either the fix isn't deployed or it's not enough.
+Mike: It's definitely deployed. The metrics show improvement. Maybe the users haven't noticed yet.
+Sarah: This seems contradictory. Can someone verify the actual production metrics versus user sentiment? Mike, can you pull those numbers?
+Mike: Yeah, I'll look into that. Eventually.
+Sarah: I need those numbers by Thursday, not eventually. Let's also discuss the partnership with Acme Corp.
+Lisa: The Acme partnership is basically done. We're just waiting on legal review.
+David: Wait, I spoke with Acme yesterday and they said they have concerns about the pricing model. They might not sign.
+Lisa: That's not what I heard from their VP last week. She said everything was on track.
+Sarah: So we have conflicting information about Acme. Lisa, can you set up a call with their team this week to resolve this?
+Lisa: I'll try to arrange something. Hopefully by Friday.
+Sarah: Let's make it by Wednesday. OK, final item. The team offsite. Any updates?
+David: I'm looking into venues. There are some options but nothing confirmed yet.
+Sarah: When will we have a confirmed venue?
+David: At some point next week, I think. There are a lot of options to consider.
+Sarah: David, I need a confirmed venue by Monday. Can you commit to that?
+David: I'll do my best.
+Sarah: Alright, let's wrap up. To summarize: Mike will confirm the launch date by Friday and pull performance metrics by Thursday. Lisa will set up the Acme call by Wednesday and finalize the marketing campaign timeline. David will own email marketing with a draft by next Wednesday and confirm the offsite venue by Monday.
+Mike: Sounds good.
+Lisa: Got it.
+David: Will do.
+Sarah: Great. Thanks everyone. Let's make sure we follow through this time.
