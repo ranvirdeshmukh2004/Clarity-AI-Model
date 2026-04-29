@@ -26,10 +26,7 @@ export default function LoginPage() {
         if (error) throw error;
         setMessage("Check your email for a confirmation link!");
       } else {
-        const { error } = await supabase.auth.signInWithPassword({
-          email,
-          password,
-        });
+        const { error } = await supabase.auth.signInWithPassword({ email, password });
         if (error) throw error;
         router.push("/dashboard");
       }
@@ -41,90 +38,80 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center px-4">
-      <div className="w-full max-w-md animate-fade-in-up">
+    <div className="min-h-screen flex items-center justify-center px-4 relative">
+      {/* Decorative orbs */}
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-blue-500/5 blur-3xl" />
+      <div className="absolute bottom-1/4 right-1/4 w-80 h-80 rounded-full bg-purple-500/4 blur-3xl" />
+
+      <div className="w-full max-w-md relative z-10 animate-fade-in-up">
         {/* Logo */}
         <Link href="/" className="flex items-center justify-center gap-3 mb-10">
-          <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-            <span className="text-white font-bold text-lg">C</span>
-          </div>
-          <span className="text-xl font-bold text-[var(--text-primary)]">
-            Clarity AI
-          </span>
+          <div className="nav-logo-icon" style={{ width: 44, height: 44, fontSize: 20 }}>C</div>
+          <span className="text-2xl font-extrabold text-[var(--text-bright)] tracking-tight">Clarity AI</span>
         </Link>
 
-        <div className="glass-card p-8">
-          <h1 className="text-2xl font-bold text-center mb-2 text-[var(--text-primary)]">
+        <div className="glass-card p-8 relative overflow-hidden">
+          {/* Top gradient accent */}
+          <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-blue-500/50 to-transparent" />
+
+          <h1 className="text-2xl font-bold text-center mb-1 text-[var(--text-bright)] tracking-tight">
             {isSignUp ? "Create Account" : "Welcome Back"}
           </h1>
-          <p className="text-center text-[var(--text-secondary)] mb-8 text-sm">
-            {isSignUp
-              ? "Start analyzing your meetings"
-              : "Sign in to your account"}
+          <p className="text-center text-[var(--text-muted)] mb-8 text-sm">
+            {isSignUp ? "Start analyzing your meetings with AI" : "Sign in to continue"}
           </p>
 
-          <form onSubmit={handleSubmit} className="space-y-4">
+          <form onSubmit={handleSubmit} className="space-y-5">
             <div>
-              <label className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">
-                Email
-              </label>
+              <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Email</label>
               <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full px-4 py-3 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--accent-blue)] transition-colors"
-                placeholder="you@company.com"
+                type="email" value={email} onChange={(e) => setEmail(e.target.value)} required
+                className="input-field" placeholder="you@company.com"
               />
             </div>
             <div>
-              <label className="block text-sm font-medium text-[var(--text-secondary)] mb-1.5">
-                Password
-              </label>
+              <label className="block text-sm font-medium text-[var(--text-secondary)] mb-2">Password</label>
               <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                minLength={6}
-                className="w-full px-4 py-3 rounded-xl bg-[var(--bg-primary)] border border-[var(--border-subtle)] text-[var(--text-primary)] placeholder-[var(--text-muted)] focus:outline-none focus:border-[var(--accent-blue)] transition-colors"
-                placeholder="••••••••"
+                type="password" value={password} onChange={(e) => setPassword(e.target.value)} required minLength={6}
+                className="input-field" placeholder="••••••••"
               />
             </div>
 
             {error && (
-              <div className="text-sm text-rose-400 bg-rose-500/10 border border-rose-500/20 rounded-lg px-4 py-2">
+              <div className="text-sm text-rose-400 bg-rose-500/8 border border-rose-500/15 rounded-xl px-4 py-3">
                 {error}
               </div>
             )}
             {message && (
-              <div className="text-sm text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 rounded-lg px-4 py-2">
+              <div className="text-sm text-emerald-400 bg-emerald-500/8 border border-emerald-500/15 rounded-xl px-4 py-3">
                 {message}
               </div>
             )}
 
-            <button
-              type="submit"
-              disabled={loading}
-              className="btn-primary w-full justify-center py-3"
-            >
-              {loading
-                ? "Loading..."
-                : isSignUp
-                ? "Create Account"
-                : "Sign In"}
+            <button type="submit" disabled={loading} className="btn-primary w-full justify-center py-3.5 text-[15px]">
+              {loading ? (
+                <span className="flex items-center gap-2">
+                  <span className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin" />
+                  Loading...
+                </span>
+              ) : isSignUp ? "Create Account" : "Sign In"}
             </button>
           </form>
 
-          <p className="text-center text-sm text-[var(--text-muted)] mt-6">
+          <div className="relative my-6">
+            <div className="absolute inset-0 flex items-center">
+              <div className="w-full border-t border-[var(--border-subtle)]" />
+            </div>
+            <div className="relative flex justify-center text-xs">
+              <span className="bg-[var(--glass-bg)] px-3 text-[var(--text-muted)]">or</span>
+            </div>
+          </div>
+
+          <p className="text-center text-sm text-[var(--text-muted)]">
             {isSignUp ? "Already have an account?" : "Don't have an account?"}{" "}
             <button
-              onClick={() => {
-                setIsSignUp(!isSignUp);
-                setError("");
-                setMessage("");
-              }}
-              className="text-[var(--accent-blue)] hover:underline font-medium"
+              onClick={() => { setIsSignUp(!isSignUp); setError(""); setMessage(""); }}
+              className="text-[var(--accent-blue-bright)] hover:underline font-semibold"
             >
               {isSignUp ? "Sign In" : "Sign Up"}
             </button>
