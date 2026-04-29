@@ -59,10 +59,10 @@ export default function SpeakerBreakdown({ segments }: Props) {
                 color: "#F1F5F9",
                 fontSize: "13px",
               }}
-              formatter={(value: number, _: string, props: { payload: { percentage: number } }) => [
-                `${value} segments (${props.payload.percentage}%)`,
-                "Participation",
-              ]}
+              formatter={(value, _name, props) => {
+                const pct = (props as { payload?: { percentage?: number } })?.payload?.percentage ?? 0;
+                return [`${value} segments (${pct}%)`, "Participation"];
+              }}
               cursor={{ fill: "rgba(59,130,246,0.08)" }}
             />
             <Bar dataKey="segments" radius={[0, 6, 6, 0]} barSize={24}>
